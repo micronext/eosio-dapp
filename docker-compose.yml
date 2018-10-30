@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  app:
+    image: eosio/eos-dev:v1.3.2
+    hostname: eosio_blog_container
+    working_dir: /opt/eosio/bin/
+    volumes:
+     - ./eosio_docker/contracts:/opt/eosio/bin/contracts
+     - ./eosio_docker/scripts:/opt/eosio/bin/scripts
+     - ./eosio_docker/data:/mnt/dev/data
+    ports:
+     - 8888:8888
+     - 9876:9876
+    command: /bin/bash -c "${SCRIPT}"
+  db:
+    image: mongo:4.0
+    hostname: mongo_blog_container
+    volumes:
+     - mongostore:/data/db
+    ports:
+     - 27017:27017
+volumes:
+  mongostore:
