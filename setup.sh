@@ -8,7 +8,7 @@ docker pull eosio/eos:latest \
     && docker pull eosio/eos-dev:latest \
     && docker pull mongo:4 \
     && docker pull node:8
-
+    
 echo " " > ./dapp.init
 
 # cd ./frontend && npm install && cd ../

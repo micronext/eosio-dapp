@@ -3,10 +3,7 @@ set -o errexit
 if [ ! -d "./.eosinit" ]; then
     exit 1;
 fi
-docker rm -f eosio_blog_container || true
-docker rm -f eosio_blog_container || true
-docker rmi eosio/eos-dev:v1.3.2 || true
-docker rmi mongo:4.0 || true
+. ./stop.sh
 
 rm -rf "./eosio_docker/data"
 mkdir -p "./eosio_docker/data"
