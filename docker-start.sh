@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 # # make sure everything is clean and well setup
-./first_time_setup.sh
-
+./setup.sh
 # # start blockchain and put in background
-./start_eosio_docker.sh --nolog
-
+./eosio_docker/eosio.sh
 # start mongodb and put in background
-./start_mongodb_docker.sh --nolog
+./eosio_docker/mongo.sh
