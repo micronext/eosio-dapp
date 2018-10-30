@@ -11,7 +11,7 @@ services:
     ports:
      - 8888:8888
      - 9876:9876
-    command: /bin/bash -c "${SCRIPT}"
+    command: ./scripts/init.sh
   db:
     image: mongo:4.0
     hostname: mongo_blog_container
