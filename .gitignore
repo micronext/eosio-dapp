@@ -6,6 +6,9 @@ docker/volumes/postgresql/*
 docker/volumes/logchain/*
 docker/volumes/eosio/*
 docker/volumes/transactions_cache/*
+
+dapp.init
+
 .idea
 
 # testing

@@ -10,9 +10,9 @@ fi
 echo "=== run docker container from the eosio/eos-dev image ==="
 docker run --rm --name eosio_blog_container -d \
 -p 8888:8888 -p 9876:9876 \
---mount type=bind,src="$(pwd)"/contracts,dst=/opt/eosio/bin/contracts \
---mount type=bind,src="$(pwd)"/scripts,dst=/opt/eosio/bin/scripts \
---mount type=bind,src="$(pwd)"/data,dst=/mnt/dev/data \
+--mount type=bind,src="$PWD/contracts",dst="/opt/eosio/bin/contracts" \
+--mount type=bind,src="$PWD/scripts",dst="/opt/eosio/bin/scripts" \
+--mount type=bind,src="$PWD/data",dst="/mnt/dev/data" \
 -w "/opt/eosio/bin/" \
 eosio/eos-dev:v1.3.2 \
 /bin/bash -c "$script"
@@ -20,7 +20,7 @@ eosio/eos-dev:v1.3.2 \
 echo "=== run docker container from the mongo image ==="
 docker run --rm --name mongo_blog_container -d \
 -p 27017:27017 \
---mount type=bind,src="$(pwd)"/mongodb,dst=/data/db \
+--mount type=bind,src="$PWD/mongodb",dst="/data/db" \
 mongo:4.0
 
 echo "=== :::: RUNNED";
